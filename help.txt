@@ -1,0 +1,35 @@
+Usage of jwtdecode.exe:
+  Parses a JWT token and outputs its claims in various formats.
+
+Arguments:
+  -config string
+    	Full path of config.json
+  -convert-epoch
+    	Convert epoch timestamps to human-readable format
+  -max-output-size int
+    	Maximum formatted output size in MB (default 100)
+  -max-token-size int
+    	Maximum JWT token size in MB (default 1)
+  -output-file string
+    	Full path of output file
+  -output-format string
+    	Output format (JSON, CSV, or XML)
+  -silent
+    	Suppress all output messages
+  -token-env
+    	Get the token from the environment variable JWT_TOKEN
+  -token-string string
+    	Access token passed as a string
+  -version
+    	Display the current application version
+
+Examples:
+  jwtdecode.exe -token-string <your_jwt> -output-format JSON -output-file claims.json
+  jwtdecode.exe -token-env -output-format CSV -output-file claims.csv (requires JWT_TOKEN env var)
+  jwtdecode.exe -config config.json
+  jwtdecode.exe -version
+
+Defaults: -output-format defaults to JSON, -output-file defaults to claims.<format_extension>
+
+Security: File paths are sanitized to prevent directory traversal and special device files.
+  Input token and output data sizes are limited to prevent resource exhaustion.

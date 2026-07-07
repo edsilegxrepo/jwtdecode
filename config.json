@@ -1,0 +1,10 @@
+{
+  "jwtToken": "token.txt",
+  "tokenType": "file",
+  "outputFormat": "JSON",
+  "outputFile": "test.json",
+  "convertEpoch": false,
+  "silentExec": false,
+  "maxTokenSizeMB": 1,
+  "maxOutputSizeMB": 100
+}
